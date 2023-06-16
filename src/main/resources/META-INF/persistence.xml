@@ -1,0 +1,36 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<persistence version="2.1" xmlns="http://xmlns.jcp.org/xml/ns/persistence" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://xmlns.jcp.org/xml/ns/persistence http://xmlns.jcp.org/xml/ns/persistence/persistence_2_1.xsd">
+  <persistence-unit name="fatima.app.project_PointOfSalesApp_war_1.0-SNAPSHOTPU" transaction-type="JTA">
+    <jta-data-source>jdbc/pos</jta-data-source>
+    <class>fatima.app.project.pointofsalesapp.entities.Arqueos</class>
+    <class>fatima.app.project.pointofsalesapp.entities.Articulo</class>
+    <class>fatima.app.project.pointofsalesapp.entities.Categoria</class>
+    <class>fatima.app.project.pointofsalesapp.entities.DetalleIngreso</class>
+    <class>fatima.app.project.pointofsalesapp.entities.DetalleVenta</class>
+    <class>fatima.app.project.pointofsalesapp.entities.FailedJobs</class>
+    <class>fatima.app.project.pointofsalesapp.entities.Ingreso</class>
+    <class>fatima.app.project.pointofsalesapp.entities.Migrations</class>
+    <class>fatima.app.project.pointofsalesapp.entities.Permiso</class>
+    <class>fatima.app.project.pointofsalesapp.entities.Person</class>
+    <class>fatima.app.project.pointofsalesapp.entities.Persona</class>
+    <class>fatima.app.project.pointofsalesapp.entities.Roles</class>
+    <class>fatima.app.project.pointofsalesapp.entities.Rolxpagina</class>
+    <class>fatima.app.project.pointofsalesapp.entities.Users</class>
+    <class>fatima.app.project.pointofsalesapp.entities.Usuario</class>
+    <class>fatima.app.project.pointofsalesapp.entities.UsuarioPermiso</class>
+    <class>fatima.app.project.pointofsalesapp.entities.Usuarios</class>
+    <class>fatima.app.project.pointofsalesapp.entities.Venta</class>
+    <exclude-unlisted-classes>true</exclude-unlisted-classes>
+    <properties>
+      <property name="jakarta.persistence.schema-generation.database.action" value="create"/>
+      <property name="javax.persistence.schema-generation.database.action" value="create"/>
+      
+       <!-- Configuración de la conexión a la base de datos en Apache Netbeans 18-->
+            <property name="javax.persistence.jdbc.url" value="jdbc:mysql://localhost:3306/ashor?zeroDateTimeBehavior=CONVERT_TO_NULL"/>
+            <property name="javax.persistence.jdbc.user" value="root"/>
+            <property name="javax.persistence.jdbc.password" value="root"/>
+            <property name="javax.persistence.jdbc.driver" value="com.mysql.cj.jdbc.Driver"/>
+            
+    </properties>
+  </persistence-unit>
+</persistence>
