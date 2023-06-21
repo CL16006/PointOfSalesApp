@@ -4,19 +4,10 @@
  */
 package fatima.app.project.pointofsalesapp.entities;
 
+import jakarta.json.bind.annotation.JsonbTransient;
 import java.io.Serializable;
 import java.util.List;
-import javax.persistence.Basic;
-import javax.persistence.CascadeType;
-import javax.persistence.Column;
-import javax.persistence.Entity;
-import javax.persistence.GeneratedValue;
-import javax.persistence.GenerationType;
-import javax.persistence.Id;
-import javax.persistence.NamedQueries;
-import javax.persistence.NamedQuery;
-import javax.persistence.OneToMany;
-import javax.persistence.Table;
+import jakarta.persistence.*;
 
 /**
  *
@@ -58,8 +49,10 @@ public class Persona implements Serializable {
     private String telefono;
     @Column(name = "email", length = 50)
     private String email;
+    @JsonbTransient
     @OneToMany(cascade = CascadeType.ALL, mappedBy = "idcliente")
     private List<Venta> ventaList;
+    @JsonbTransient
     @OneToMany(cascade = CascadeType.ALL, mappedBy = "idproveedor")
     private List<Ingreso> ingresoList;
 

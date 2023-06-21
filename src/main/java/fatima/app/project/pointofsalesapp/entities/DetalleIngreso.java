@@ -4,19 +4,11 @@
  */
 package fatima.app.project.pointofsalesapp.entities;
 
+import jakarta.json.bind.annotation.JsonbTransient;
 import java.io.Serializable;
 import java.math.BigDecimal;
-import javax.persistence.Basic;
-import javax.persistence.Column;
-import javax.persistence.Entity;
-import javax.persistence.GeneratedValue;
-import javax.persistence.GenerationType;
-import javax.persistence.Id;
-import javax.persistence.JoinColumn;
-import javax.persistence.ManyToOne;
-import javax.persistence.NamedQueries;
-import javax.persistence.NamedQuery;
-import javax.persistence.Table;
+import jakarta.persistence.*;
+
 
 /**
  *
@@ -51,6 +43,7 @@ public class DetalleIngreso implements Serializable {
     @JoinColumn(name = "idarticulo", referencedColumnName = "idarticulo", nullable = false)
     @ManyToOne(optional = false)
     private Articulo idarticulo;
+    @JsonbTransient
     @JoinColumn(name = "idingreso", referencedColumnName = "idingreso", nullable = false)
     @ManyToOne(optional = false)
     private Ingreso idingreso;

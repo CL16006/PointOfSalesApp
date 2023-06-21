@@ -4,20 +4,10 @@
  */
 package fatima.app.project.pointofsalesapp.entities;
 
+import jakarta.json.bind.annotation.JsonbTransient;
 import java.io.Serializable;
 import java.util.List;
-import javax.persistence.Basic;
-import javax.persistence.CascadeType;
-import javax.persistence.Column;
-import javax.persistence.Entity;
-import javax.persistence.GeneratedValue;
-import javax.persistence.GenerationType;
-import javax.persistence.Id;
-import javax.persistence.NamedQueries;
-import javax.persistence.NamedQuery;
-import javax.persistence.OneToMany;
-import javax.persistence.Table;
-import javax.persistence.UniqueConstraint;
+import jakarta.persistence.*;
 
 /**
  *
@@ -79,8 +69,10 @@ public class Usuario implements Serializable {
     private short condicion;
     @OneToMany(cascade = CascadeType.ALL, mappedBy = "idusuario")
     private List<Venta> ventaList;
+    @JsonbTransient
     @OneToMany(mappedBy = "idusuario")
     private List<Ingreso> ingresoList;
+    @JsonbTransient
     @OneToMany(cascade = CascadeType.ALL, mappedBy = "idusuario")
     private List<UsuarioPermiso> usuarioPermisoList;
 

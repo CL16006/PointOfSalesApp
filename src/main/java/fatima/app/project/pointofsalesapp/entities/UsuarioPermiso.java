@@ -4,18 +4,10 @@
  */
 package fatima.app.project.pointofsalesapp.entities;
 
+import jakarta.json.bind.annotation.JsonbTransient;
 import java.io.Serializable;
-import javax.persistence.Basic;
-import javax.persistence.Column;
-import javax.persistence.Entity;
-import javax.persistence.GeneratedValue;
-import javax.persistence.GenerationType;
-import javax.persistence.Id;
-import javax.persistence.JoinColumn;
-import javax.persistence.ManyToOne;
-import javax.persistence.NamedQueries;
-import javax.persistence.NamedQuery;
-import javax.persistence.Table;
+import jakarta.persistence.*;
+
 
 /**
  *
@@ -36,6 +28,7 @@ public class UsuarioPermiso implements Serializable {
     private Integer idusuarioPermiso;
     @JoinColumn(name = "idpermiso", referencedColumnName = "idpermiso", nullable = false)
     @ManyToOne(optional = false)
+    @JsonbTransient
     private Permiso idpermiso;
     @JoinColumn(name = "idusuario", referencedColumnName = "idusuario", nullable = false)
     @ManyToOne(optional = false)

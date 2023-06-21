@@ -4,25 +4,13 @@
  */
 package fatima.app.project.pointofsalesapp.entities;
 
+import jakarta.json.bind.annotation.JsonbTransient;
 import java.io.Serializable;
 import java.math.BigDecimal;
 import java.util.Date;
 import java.util.List;
-import javax.persistence.Basic;
-import javax.persistence.CascadeType;
-import javax.persistence.Column;
-import javax.persistence.Entity;
-import javax.persistence.GeneratedValue;
-import javax.persistence.GenerationType;
-import javax.persistence.Id;
-import javax.persistence.JoinColumn;
-import javax.persistence.ManyToOne;
-import javax.persistence.NamedQueries;
-import javax.persistence.NamedQuery;
-import javax.persistence.OneToMany;
-import javax.persistence.Table;
-import javax.persistence.Temporal;
-import javax.persistence.TemporalType;
+import jakarta.persistence.*;
+
 
 /**
  *
@@ -67,12 +55,15 @@ public class Venta implements Serializable {
     private BigDecimal totalVenta;
     @Column(name = "estado", length = 20)
     private String estado;
+    @JsonbTransient
     @JoinColumn(name = "idcliente", referencedColumnName = "idpersona", nullable = false)
     @ManyToOne(optional = false)
     private Persona idcliente;
+    @JsonbTransient
     @JoinColumn(name = "idusuario", referencedColumnName = "idusuario", nullable = false)
     @ManyToOne(optional = false)
     private Usuario idusuario;
+    @JsonbTransient
     @OneToMany(cascade = CascadeType.ALL, mappedBy = "idventa")
     private List<DetalleVenta> detalleVentaList;
 
