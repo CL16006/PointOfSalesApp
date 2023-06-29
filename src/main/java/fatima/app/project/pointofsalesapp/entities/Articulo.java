@@ -65,7 +65,6 @@ public class Articulo implements Serializable {
     @JsonbTransient
     @OneToMany(cascade = CascadeType.ALL, mappedBy = "idarticulo")
     private List<DetalleVenta> detalleVentaList;
-    @JsonbTransient
     @JoinColumn(name = "idcategoria", referencedColumnName = "idcategoria", nullable = false)
     @ManyToOne(optional = false)
     private Categoria idcategoria;
