@@ -4,14 +4,27 @@
  */
 package fatima.app.project.pointofsalesapp.resources.service;
 
+import jakarta.ws.rs.container.DynamicFeature;
+import jakarta.ws.rs.container.ResourceInfo;
+import jakarta.ws.rs.core.FeatureContext;
 import java.util.Set;
+import jakarta.ws.rs.ApplicationPath;
+import jakarta.ws.rs.core.Application;
+import jakarta.ws.rs.container.DynamicFeature;
+import jakarta.ws.rs.container.ResourceInfo;
+import jakarta.ws.rs.core.FeatureContext;
+
+
+
+import java.io.File;
+import java.util.Map;
 
 /**
  *
  * @author ftmca
  */
 @jakarta.ws.rs.ApplicationPath("api")
-public class ApplicationConfig extends jakarta.ws.rs.core.Application {
+public class ApplicationConfig extends jakarta.ws.rs.core.Application{
 
     @Override
     public Set<Class<?>> getClasses() {
@@ -29,4 +42,6 @@ public class ApplicationConfig extends jakarta.ws.rs.core.Application {
     private void addRestResourceClasses(Set<Class<?>> resources) {
     }
     
+   
+
 }

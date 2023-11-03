@@ -48,7 +48,9 @@
             <artifactId>jakarta.ws.rs-api</artifactId>
             <version>3.1.0</version>
         </dependency>
-        
+        <!-- Dependencia cors-->
+
+
     </dependencies>
     
     <build>
